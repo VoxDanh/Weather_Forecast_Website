@@ -1,25 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dự báo thời tiết</title>
+    <link rel="icon" href="../img/LogoWeb.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/main.css" />
 </head>
 
 <body>
 
-    <head>
-
-    </head>
     <main>
+        <article class="weather-forecast-container">
+            <section class="search-form">
+                <h1>Chọn địa điểm tại</h1>
+                <form>
+                    <input type="select" class="select-country" value="Việt Nam" />
+                    <input type="select" class="select-city" value="Hà Nội" />
+                    <input type="select" class="select-district" value="Quận Hoàn Kiếm" />
+                    <button type="button" class="btn-search">Tìm kiếm</button>
+                </form>
+            </section>
+            <section class="weather-information">
+                <article class="weather-current" itemscope itemtype="https://schema.org/WeatherForecast"
+                    aria-labelledby="current-weather-heading">
+                    <section class="weather-header">
+                        <h2 id="current-weather-heading">Thông tin thời tiết hiện tại</h2>
+                        <p class="location" itemprop="areaServed" aria-live="polite">
+                            <span id="location-country">Việt Nam</span>, <span id="location-city">Hà Nội</span>, <span
+                                id="location-district">Quận Hoàn Kiếm</span>
+                        </p>
+                        <time id="observation-time" class="observation-time" itemprop="validFrom" datetime=""
+                            aria-label="Thời điểm quan trắc"></time>
+                        <p class="date-time" aria-label="Ngày giờ hiện tại">
+                            <span id="date-value">00/00/0000</span>
+                            <span id="time-value">00:00:00</span>
+                        </p>
+                    </section>
 
+                    <section class="weather-summary" aria-label="Tóm tắt">
+                        <figure class="weather-icon">
+                            <img id="weather-icon" src="../img/LogoWeb.png" alt="Biểu tượng thời tiết"
+                                itemprop="image" />
+                            <figcaption id="weather-description" itemprop="description">Mô tả thời tiết</figcaption>
+                        </figure>
+
+                        <div class="temperature-block">
+                            <p class="temperature" aria-label="Nhiệt độ" itemprop="temperature">
+                                <span id="temperature-value">0</span><span class="unit">°C</span>
+                            </p>
+                            <p class="feels-like" aria-label="Nhiệt độ cảm thấy" itemprop="temperature">
+                                Cảm giác như: <span id="feelslike-value">0</span><span class="unit">°C</span>
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="weather-details" aria-label="Chi tiết thời tiết">
+                        <dl class="details-list">
+                            <div class="detail-item">
+                                <dt>Độ ẩm</dt>
+                                <dd><span id="humidity">0</span><span class="unit">%</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Độ che phủ mây</dt>
+                                <dd><span id="cloud-cover">0</span><span class="unit">%</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Tỷ lệ mưa</dt>
+                                <dd><span id="rainfall-rate">0</span><span class="unit">%</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Áp suất khí quyển</dt>
+                                <dd><span id="pressure">0</span><span class="unit">hPa</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Tầm nhìn</dt>
+                                <dd><span id="visibility">0</span><span class="unit">km</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Tốc độ gió</dt>
+                                <dd><span id="wind-speed">0</span><span class="unit">m/s</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Hướng gió</dt>
+                                <dd><span id="wind-direction">0</span><span class="unit">°</span></dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Chỉ số AQI</dt>
+                                <dd>
+                                    <span id="aqi">0</span>
+                                    <span id="aqi-category" class="aqi-category"
+                                        aria-label="Mức độ chất lượng không khí"></span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Chỉ số UV</dt>
+                                <dd>
+                                    <span id="uv-index">0</span>
+                                    <span id="uv-category" class="uv-category" aria-label="Mức độ tia UV"></span>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                </article>
+
+                <section class="weather-forecast" aria-labelledby="hourly-forecast-heading">
+                    <h2 id="hourly-forecast-heading">Dự báo 5 giờ tới</h2>
+                    <ul class="hourly-list" itemscope itemtype="https://schema.org/ItemList">
+                        <meta itemprop="itemListOrder" content="Ascending" />
+                        <li class="hourly-item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/WeatherForecast">
+                            <time class="forecast-time" itemprop="validFrom" datetime=""><span>+1 giờ</span></time>
+                            <img class="forecast-icon" src="../img/LogoWeb.png" alt="Biểu tượng" itemprop="image" />
+                            <span class="forecast-temp" itemprop="temperature"><span>0</span>°C</span>
+                            <span class="forecast-desc" itemprop="description">0</span>
+                            <span class="forecast-precip">Mưa: <span>0</span>%</span>
+                        </li>
+                        <li class="hourly-item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/WeatherForecast">
+                            <time class="forecast-time" itemprop="validFrom" datetime=""><span>+2 giờ</span></time>
+                            <img class="forecast-icon" src="../img/LogoWeb.png" alt="Biểu tượng" itemprop="image" />
+                            <span class="forecast-temp" itemprop="temperature"><span>0</span>°C</span>
+                            <span class="forecast-desc" itemprop="description">0</span>
+                            <span class="forecast-precip">Mưa: <span>0</span>%</span>
+                        </li>
+                        <li class="hourly-item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/WeatherForecast">
+                            <time class="forecast-time" itemprop="validFrom" datetime=""><span>+3 giờ</span></time>
+                            <img class="forecast-icon" src="../img/LogoWeb.png" alt="Biểu tượng" itemprop="image" />
+                            <span class="forecast-temp" itemprop="temperature"><span>0</span>°C</span>
+                            <span class="forecast-desc" itemprop="description">0</span>
+                            <span class="forecast-precip">Mưa: <span>0</span>%</span>
+                        </li>
+                        <li class="hourly-item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/WeatherForecast">
+                            <time class="forecast-time" itemprop="validFrom" datetime=""><span>+4 giờ</span></time>
+                            <img class="forecast-icon" src="../img/LogoWeb.png" alt="Biểu tượng" itemprop="image" />
+                            <span class="forecast-temp" itemprop="temperature"><span>0</span>°C</span>
+                            <span class="forecast-desc" itemprop="description">0</span>
+                            <span class="forecast-precip">Mưa: <span>0</span>%</span>
+                        </li>
+                        <li class="hourly-item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/WeatherForecast">
+                            <time class="forecast-time" itemprop="validFrom" datetime=""><span>+5 giờ</span></time>
+                            <img class="forecast-icon" src="../img/LogoWeb.png" alt="Biểu tượng" itemprop="image" />
+                            <span class="forecast-temp" itemprop="temperature"><span>0</span>°C</span>
+                            <span class="forecast-desc" itemprop="description">0</span>
+                            <span class="forecast-precip">Mưa: <span>0</span>%</span>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+        </article>
     </main>
-    <footer>
 
-    </footer>
-    <script src="script.js"></script>
+    <script src="../javaScript/main.js"></script>
 </body>
 
 </html>
