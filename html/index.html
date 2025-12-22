@@ -17,10 +17,9 @@
             <section class="search-form">
                 <h1>Chọn địa điểm tại</h1>
                 <form>
-                    <input type="select" class="select-country" value="Việt Nam" />
-                    <input type="select" class="select-city" value="Hà Nội" />
-                    <input type="select" class="select-district" value="Quận Hoàn Kiếm" />
-                    <button type="button" class="btn-search">Tìm kiếm</button>
+                    <input type="select" class="select-country" id="select-country" value="VietNam" />
+                    <input type="select" class="select-city" id="select-city" value="HaNoi" />
+                    <button type="button" class="btn-search" id="btn-search">Tìm kiếm</button>
                 </form>
             </section>
             <section class="weather-information">
@@ -28,15 +27,13 @@
                     aria-labelledby="current-weather-heading">
                     <section class="weather-header">
                         <h2 id="current-weather-heading">Thông tin thời tiết hiện tại</h2>
-                        <p class="location" itemprop="areaServed" aria-live="polite">
-                            <span id="location-country">Việt Nam</span>, <span id="location-city">Hà Nội</span>, <span
-                                id="location-district">Quận Hoàn Kiếm</span>
+                        <p class="location-name" itemprop="areaServed" aria-live="polite">
+                            <span id="location-name">Địa điểm</span>
                         </p>
                         <time id="observation-time" class="observation-time" itemprop="validFrom" datetime=""
                             aria-label="Thời điểm quan trắc"></time>
                         <p class="date-time" aria-label="Ngày giờ hiện tại">
-                            <span id="date-value">00/00/0000</span>
-                            <span id="time-value">00:00:00</span>
+                            <span id="mesurement-time">00/00/0000</span>
                         </p>
                     </section>
 
@@ -61,45 +58,65 @@
                         <dl class="details-list">
                             <div class="detail-item">
                                 <dt>Độ ẩm</dt>
-                                <dd><span id="humidity">0</span><span class="unit">%</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Độ che phủ mây</dt>
-                                <dd><span id="cloud-cover">0</span><span class="unit">%</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Tỷ lệ mưa</dt>
-                                <dd><span id="rainfall-rate">0</span><span class="unit">%</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Áp suất khí quyển</dt>
-                                <dd><span id="pressure">0</span><span class="unit">hPa</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Tầm nhìn</dt>
-                                <dd><span id="visibility">0</span><span class="unit">km</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Tốc độ gió</dt>
-                                <dd><span id="wind-speed">0</span><span class="unit">m/s</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Hướng gió</dt>
-                                <dd><span id="wind-direction">0</span><span class="unit">°</span></dd>
-                            </div>
-                            <div class="detail-item">
-                                <dt>Chỉ số AQI</dt>
                                 <dd>
-                                    <span id="aqi">0</span>
-                                    <span id="aqi-category" class="aqi-category"
-                                        aria-label="Mức độ chất lượng không khí"></span>
+                                    <span id="humidity">0</span>
+                                    <span class="unit">%</span>
                                 </dd>
                             </div>
                             <div class="detail-item">
-                                <dt>Chỉ số UV</dt>
+                                <dt>Độ che phủ mây</dt>
                                 <dd>
-                                    <span id="uv-index">0</span>
-                                    <span id="uv-category" class="uv-category" aria-label="Mức độ tia UV"></span>
+                                    <span id="cloud-cover">0</span>
+                                    <span class="unit">%</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Gió giật</dt>
+                                <dd>
+                                    <span id="wind-gust">0</span>
+                                    <span class="unit">m/s</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Áp suất khí quyển</dt>
+                                <dd>
+                                    <span id="pressure">0</span>
+                                    <span class="unit">hPa</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Tầm nhìn</dt>
+                                <dd>
+                                    <span id="visibility">0</span>
+                                    <span class="unit">km</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Tốc độ gió</dt>
+                                <dd>
+                                    <span id="wind-speed">0</span>
+                                    <span class="unit">m/s</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Hướng gió</dt>
+                                <dd>
+                                    <span id="wind-direction">0</span>
+                                    <span class="unit">°</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Lượng mưa 1 giờ qua</dt>
+                                <dd>
+                                    <span id="rainfall">0</span>
+                                    <span class="unit">mm</span>
+                                </dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Áp suất biển</dt>
+                                <dd>
+                                    <span id="sea-level-pressure">0</span>
+                                    <span class="unit">hPa</span>
                                 </dd>
                             </div>
                         </dl>
@@ -157,7 +174,7 @@
         </article>
     </main>
 
-    <script src="../javaScript/main.js"></script>
+    <script type="module" src="../javaScript/main.js"></script>
 </body>
 
 </html>
