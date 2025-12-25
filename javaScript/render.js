@@ -1,4 +1,4 @@
-import API_DATA from "./API.js";
+import API_DATA from "./API_OpenWeatherMap.js";
 const selectCountryElement = document.getElementById("select-country");
 const selectCityElement = document.getElementById("select-city");
 const btnSearch = document.getElementById("btn-search");
