@@ -24,10 +24,10 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: var(--color-surface);
-    border-radius: var(--radius-md);
+    background: #f8fafc;
+    border-radius: 12px;
     padding: 1rem 1.25rem;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 10px rgba(2, 6, 23, 0.08);
 }
 
 .search-form h1 {
@@ -43,24 +43,22 @@
     justify-content: flex-end;
 }
 
-.select-country,
-.select-city,
-.select-district {
+.select {
     appearance: none;
-    background: var(--color-surface);
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    background: #f8fafc;
+    color: #0f172a;
+    border: 1px solid gray;
+    border-radius: 5px;
     text-align: center;
     padding: 0.6rem 0.4rem;
     width: 9rem;
 }
 
 .btn-search {
-    background: var(--color-primary);
+    background: #38bdf8;
     color: white;
     border: none;
-    border-radius: var(--radius-sm);
+    border-radius: 8px;
     padding: 0.5rem 0.4rem;
     cursor: pointer;
 }
@@ -75,9 +73,9 @@
 
 .weather-current {
     margin-top: 1rem;
-    background: var(--color-surface);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(2, 6, 23, 0.10);
     overflow: hidden;
 }
 
@@ -87,15 +85,15 @@
     justify-content: space-between;
 
     padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .weather-header .location {
-    color: var(--color-muted);
+    color: #64748b;
 }
 
 .observation-time {
-    color: var(--color-muted);
+    color: #64748b;
 }
 
 .weather-summary {

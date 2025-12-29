@@ -17,9 +17,12 @@
             <section class="search-form">
                 <h1>Chọn địa điểm tại</h1>
                 <form>
-                    <input type="select" class="select-country" id="select-country" value="VietNam" />
-                    <input type="select" class="select-city" id="select-city" value="HaNoi" />
-                    <input type="select" class="select-district" id="select-district" value="BaDinh" />
+                    <select class="select" id="select-country">
+                        <option value="" disabled selected>Chọn quốc gia</option>
+                    </select>
+                    <select class="select" id="select-city">
+                        <option value="" disabled selected>Chọn thành phố </option>
+                    </select>
                     <button type="button" class="btn-search" id="btn-search">Tìm kiếm</button>
                 </form>
             </section>
@@ -176,6 +179,7 @@
     </main>
 
     <script type="module" src="../javaScript/render.js"></script>
+    <script type="module" src="../javaScript/select.js"></script>
 </body>
 
 </html>
