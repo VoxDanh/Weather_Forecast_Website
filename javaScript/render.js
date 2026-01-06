@@ -1,4 +1,5 @@
 import API_DATA from "./API_OpenWeatherMap.js";
+import { renderForecast } from "./forecast.js";
 const selectCountryElement = document.getElementById("select-country");
 const selectCityElement = document.getElementById("select-city");
 const btnSearch = document.getElementById("btn-search");
@@ -86,6 +87,7 @@ function renderSeaLevelPressure(data) {
 
 // gọi sự kiện
 btnSearch.addEventListener("click", async () => {
+    //hiện tại
     const selectCountry = selectCountryElement.value;
     const selectCity = selectCityElement.value;
     const weatherData = await API_DATA.fetchAPIdata(selectCountry, selectCity);
@@ -104,5 +106,8 @@ btnSearch.addEventListener("click", async () => {
     renderMesurementTime(weatherData);
     renderLocation(weatherData);
     renderIcon(weatherData);
+    // dự báo
+    const forecastData = await API_DATA.fetchForecastData(selectCountry, selectCity);
+    renderForecast(forecastData);
 });
 
